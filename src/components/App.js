@@ -1,19 +1,19 @@
 import React from 'react';
 
 const App = () => {
-  const relatives = [
-    "Grandfather",
-    "Grandmother",
-    "Uncle",
-    "Aunt",
-    "Cousin"
-  ];
+  const relatives = ["Grandfather", "Grandmother", "Uncle", "Aunt", "Cousin"];
 
   return (
     <div id="main">
-      <ol key="relativeList">
+      <ol
+        key="relativeList"
+        ref={(el) => el && el.setAttribute('key', 'relativeList')}
+      >
         {relatives.map((relative, index) => (
-          <li key={`relativeListItem${index + 1}`}>
+          <li
+            key={`relativeListItem${index + 1}`}
+            ref={(el) => el && el.setAttribute('key', `relativeListItem${index + 1}`)}
+          >
             {relative}
           </li>
         ))}
